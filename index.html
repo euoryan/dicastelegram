@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo: Como Usar o Telegram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+        }
+        
+        .hero-section {
+            background: #0088cc;
+            padding: 3rem 0;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        
+        .hero-info {
+            color: white;
+        }
+        
+        .hero-info h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-info p {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        
+        .telegram-logo {
+            width: 80px;
+            height: 80px;
+            padding: 1rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .step-card {
+            max-width: 800px;
+            border-radius: 12px;
+            border-left: 4px solid #0088cc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .step-card:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: #0088cc;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin: 0 auto 1rem auto;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .step-content p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #4b5563;
+        }
+        
+        .btn-primary {
+            background: #0088cc;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #0077b3;
+        }
+        
+        .btn-secondary {
+            background-color: #f8f9fa;
+            color: #0088cc;
+            border: 2px solid #0088cc;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e9ecef;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .tips-content {
+            display: none;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        
+        .tips-toggle {
+            color: #0088cc;
+            padding: 0.5rem 0;
+            transition: all 0.2s ease;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tips-toggle:hover {
+            border-bottom: 2px solid #0088cc;
+        }
+        
+        .tip-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .tip-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tip-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tip-title {
+            color: #0088cc;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .tip-content {
+            color: #4b5563;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .social-link {
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            color: #0088cc;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-info h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-info p {
+                font-size: 1.1rem;
+            }
+            
+            .telegram-logo {
+                width: 64px;
+                height: 64px;
+                margin-top: 1.5rem;
+            }
+            
+            .step-card {
+                border-left: none;
+                border-top: 4px solid #0088cc;
+            }
+            
+            .step-content {
+                text-align: center;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-container > a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-info">
+                <h1>Guia Completo: Como Usar o Telegram</h1>
+                <p>Aprenda a usar todos os recursos do mensageiro mais versátil da atualidade</p>
+            </div>
+            <img class="telegram-logo" src="/path/to/telegram-logo.png" alt="Telegram Logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="step-wrapper">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Instalação</h3>
+                    <p>Acesse a loja de aplicativos do seu dispositivo (Play Store para Android ou App Store para iOS), busque por "Telegram", e instale o aplicativo.</p>
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Primeiros Passos</h3>
+                    <p>Abra o Telegram, cadastre seu número, insira o código de verificação, configure seu perfil e comece a adicionar contatos e conversar.</p>
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Recursos Principais</h3>
+                    <p>Explore os principais recursos do Telegram, como grupos, canais, compartilhamento de arquivos, mensagens secretas, stickers e muito mais.</p>
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Dicas Avançadas</h3>
+                    <p>Aprenda dicas avançadas como organizar conversas em pastas, ativar verificação em duas etapas, personalizar notificações e muito mais.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <a href="#" class="btn-primary">Instalar Telegram</a>
+            <a href="#" class="btn-secondary">Saiba Mais</a>
+        </div>
+        
+        <div class="tips-section">
+            <div class="tips-toggle">
+                <span>Dicas Exclusivas</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="tips-content">
+                <div class="tip-item">
+                    <div class="tip-title">Mensagens Programadas</div>
+                    <div class="tip-content">O Telegram permite que você agende o envio de mensagens para um horário futuro.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-title">Editor de Vídeos</div>
+                    <div class="tip-content">O Telegram possui um editor de vídeos integrado, permitindo que você crie e compartilhe conteúdo personalizado.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center gap-2">
+                <a href="https://www.instagram.com/euoryan/" target="_blank" class="social-link flex items-center gap-2 text-gray-600">
+                    <i class="fab fa-instagram text-xl"></i>
+                    <span class="font-medium">@euoryan</span>
+                </a>
+                <p class="text-sm text-gray-500">&copy; 2024 Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle tips content
+        const tipsToggle = document.querySelector('.tips-toggle');
+        const tipsContent = document.querySelector('.tips-content');
+        
+        tipsToggle.addEventListener('click', () => {
+            tipsContent.style.display = tipsContent.style.display === 'none' ? 'block' : 'none';
+            tipsToggle.querySelector('i').classList.toggle('fa-chevron-down');
+            tipsToggle.querySelector('i').classList.toggle('fa-chevron-up');
+        });
+    </script>
+</body>
+</html>
