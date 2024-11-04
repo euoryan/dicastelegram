@@ -37,6 +37,9 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .header::before {
@@ -62,14 +65,14 @@
       max-width: 800px;
       margin: 0 auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
 
     .logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 1rem;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
     }
 
     .header h1 {
@@ -276,7 +279,7 @@
     }
 
     .support-section {
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      background: linear-gradient(135deg, #128C7E, #25D366);
       color: white;
       padding: 3rem 1rem;
       text-align: center;
@@ -294,6 +297,32 @@
       justify-content: center;
       gap: 1rem;
       margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.6rem;
+      }
+
+      .nav ul {
+        gap: 1rem;
+        justify-content: space-around;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .download-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -375,7 +404,7 @@
           <span>Falar com Suporte</span>
         </a>
       </div>
-    </div>
+    </section>
   </div>
 
   <footer>
